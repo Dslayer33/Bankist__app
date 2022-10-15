@@ -23,14 +23,28 @@ let shadowlistItem1=document.querySelector( '.shadowlist__item1');
 let shadowlistItem2=document.querySelector( '.shadowlist__item2');
 let shadowBlockUser=document.querySelector( '.shadow__block-user');
 let shadowBlockPIN=document.querySelector( '.shadow__block-pin');
-
-
-let AccConstruct=function(User,PIN){
+let formsSendler=document.getElementById( 'footerSendler');
+let form1=document.getElementById( 'Footerform1');
+let form2=document.getElementById( 'Footerform2');
+let headerShadowText=document.querySelector( '.header__shadowtext');
+let bodyForms=document.querySelector( '.body__forms1');
+let shadowUser1=document.querySelector( '.shadow__user1');
+let shadowPIN1=document.querySelector( '.shadow__pin1');
+let shadowHeader=document.querySelector( '.shadow__header');
+let bodyHeader=document.querySelector( '.body__header');
+let shadowContainer=document.querySelector( '.shadow-container');
+let loginTime=document.querySelector( '.login-time');
+let loginTimeData=document.querySelector( '.login-time__data');
+let loginTimeData2=document.querySelector( '.login-time__data2');
+let currencyBtn=document.querySelector( '.currency-btn');
+let currencyForm=document.querySelector( '.currency-form');
+let currencyCancel=document.querySelector( '.currency-cancel');
+/*let AccConstruct=function(User,PIN){
 this.User=User;
 this.PIN=PIN;
 };
 let accaunt1=new AccConstruct('user1','0000');
-let accaunt2=new AccConstruct('user2','1111');
+let accaunt2=new AccConstruct('user2','1111');*/
 
 
 
@@ -179,4 +193,62 @@ shadowlistItem2.addEventListener('click',function(e15){
     e15.stopPropagation();
 shadowBlockUser.textContent='User:user2';
 shadowBlockPIN.textContent='PIN:1111';
+});
+
+ 
+
+ class AccConstruct {
+    constructor(User,PIN,vault){
+        this.User=User;
+        this.PIN=PIN;
+        this.vault=vault;
+    }
+}
+
+let accaunt1=new AccConstruct('user1','0000');
+let accaunt2=new AccConstruct('user2','1111');
+
+
+
+formsSendler.addEventListener('click',function(e16){
+    e16.preventDefault();
+    e16.stopPropagation();
+    let form1SaveData=form1.value;
+    let form2SaveData=form2.value;
+
+    let logindata=new Date();
+   
+
+       if(form1SaveData == accaunt1.User && form2SaveData == +accaunt1.PIN){
+          bodyHeader.style.cssText='display:none';
+          shadowHeader.style.cssText='display:inline';
+           headerShadowText.style.cssText='display:inline';
+           headerShadowText.textContent=`Good day, ${form1SaveData}!`;
+           logIn.style.cssText='display:none';
+           worldTransfers.style.cssText='display:none';
+           reBonus.style.cssText='display:none';
+           questions.style.cssText='display:none';
+           bodyForms.style.cssText='display:none';
+           shadowContainer.style.cssText='display:inline';
+           loginTime.style.cssText='display:inline';
+           loginTimeData.textContent=logindata.getHours();
+           loginTimeData2.textContent=logindata.getMinutes();
+         } else {
+             alert('Something wrong!');
+         }
+      return form1SaveData,form2SaveData;
+});
+
+currencyBtn.addEventListener('click',function(e17){
+    e17.preventDefault();
+    e17.stopPropagation();
+    currencyBtn.style.cssText='display:none';
+    currencyForm.style.cssText='display:inline';
+});
+
+currencyCancel.addEventListener('click',function(e18){
+    e18.preventDefault();
+    e18.stopPropagation();
+    currencyForm.style.cssText='display:none';
+    currencyBtn.style.cssText='display:inline';
 });

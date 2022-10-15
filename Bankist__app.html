@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng/rus">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,7 @@
                   </li>
             </span>
           </div>
+
           
           <div class="header__shadowmenu">
             <span class="header__shadowname">Draco$Send</span>
@@ -39,16 +40,32 @@
             </span>
           </div>
 
-          <div class="header__forms" id="forms1">
-            <form>
-                <input class="form1" type="text" name="user" placeholder="User">
-            </form>
-            <form>
-                <input class="form2" type="number" name="pin" placeholder="PIN">
-            </form>
-            <img src="icons/arrow-circle-right.png" class="forms__sendler">
-          </div>
+
+    <div class="header__forms" id="forms1">
+        <form>
+            <input list="data1" class="form1" type="text" name="user" placeholder="User">
+        </form>
+        <form>
+            <input class="form2" type="password" name="pin" placeholder="PIN">
+        </form>
+        <img src="icons/arrow-circle-right.png" class="forms__sendler">
+      </div>
+
+
+          
+       <datalist class="form1__datalist" id="data1">
+        <option>user1</option>
+        <option>user2</option>
+      </datalist>
        </header>
+
+       <header class="shadow__header">
+        <span class="header__shadowtext"></span>
+        <img class="header__icon" src="icons/dragon_icon_126573.png" id="hd__icon">
+       </header>
+
+
+       
 
 <main class="body__main">
     <div class="body__block">
@@ -75,8 +92,8 @@
        <span class="shadow__block-img">&#10006;</span>
        <span class="shadow__block-name" title="User Personal Card">UPC</span>
        <div class="shadow__block-info">
-        <span class="shadow__block-user">User:user1</span>
-        <span class="shadow__block-pin">PIN:0000</span>
+        <span class="shadow__block-user">User:<span class="shadow__user1">user1</span></span>
+        <span class="shadow__block-pin">PIN:<span class="shadow__pin1">0000</span></span>
        </div>
     </div>
 
@@ -105,16 +122,114 @@
           <span class="questions__team1">Team Future</span>
        </div>
     </div>
+
+
 </main>
       
+
+<section class="shadow-container">
+    <div class="shadow-container__balance">
+        <span class="balance-text">Current Balance</span>
+        <span class="balance-value"><span class="value">0</span> &#36;</span>
+    </div>
+
+    <span class="impact-data"></span>
+
+<div class="u-boxes-position">
+    <div class="value-box">
+        <div class="value-box__block block1"></div>
+        <div class="value-box__block block2"></div>
+        <div class="value-box__block block3"></div>
+        <div class="value-box__block block4"></div>
+        <div class="value-box__block block5"></div>
+        <div class="value-box__block block6"></div>
+        <div class="value-box__block block7"></div>
+        <div class="value-box__block block8"></div>
+    </div>
+
+    <div class="user-box">
+        <div class="user-box__block  block-transfer">
+          <span class="block-title">Transfer Money</span>
+
+          <div class="u-block-sendler">
+             <div class="sendler-leftp">
+                <input class="form-line leftline" type="text" name="Text">
+                <span class="sendler-leftp__formtext">Transfer to</span>
+             </div>
+
+             <div class="sendler-centerp">
+                <input class="form-line centerline" type="number" name="Number">
+                <span class="sendler-centerp__formtext">Amount</span>
+             </div>
+
+             <span class="sendler-endp">&rarr;</span>
+          </div>
+        </div>
+
+        <div class="user-box__block  block-request">
+            <span class="block-title">Request Loan</span>
+
+            <div class="u-block-request">
+                <div class="request-leftp">
+                    <input class="form-line2 leftline" type="number" name="Number">
+                    <span class="request-leftp__formtext">Amount</span>
+                </div>
+
+                <span class="request-endp">&rarr;</span>
+            </div>
+        </div>
+
+        <div class="user-box__block  block-close">
+            <span class="block-title">Close Accaunt</span>
+
+            <div class="u-block-close">
+                <div class="close-leftp">
+                   <input class="form-line3 leftline" type="text" name="Text">
+                   <span class="close-leftp__formtext">Confirm user</span>
+                </div>
+   
+                <div class="close-centerp">
+                   <input class="form-line3 centerline" type="password" name="PIN">
+                   <span class="close-centerp__formtext">Confirm PIN</span>
+                </div>
+   
+                <span class="close-endp">&rarr;</span>
+             </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="u-log-position">
+    <span class="login-time">You will be logged in <span class='login-time__data'></span>:<span class="login-time__data2"></span></span>
+    <!--<span class="logout-time">You will be logged out in <span class=logout-time__data"">0</span></span>-->
+    
+    <button class="currency-btn">Currency</button>
+
+    <form action="" class="currency-form">
+        <fieldset id="currency__group" class="currency-ch">
+            <input type="radio" value="value1" name="currency__group" class="currency" title="Dollar">&#36;</span>
+            <input type="radio" value="value2" name="currency__group" class="currency" title="Pound">&#163;</span>
+            <input type="radio" value="value3" name="currency__group" class="currency" title="Euro">&#8364;</span>
+            <input type="radio" value="value4" name="currency__group" class="currency" title="Ruble">&#8381;</span>
+            <input type="radio" value="value5" name="currency__group" class="currency" title="Yuán">&#20803;</span>
+
+            <span class="currency-cancel">&#10006;</span>
+          </fieldset> 
+    </form>
+</div>
+    
+</section>
+
+
 <div class="body__forms1" id="forms2">
     <form>
-        <input class="form1" type="text" name="user" placeholder="User">
+        <input list="data1" class="form1" type="text" name="user" placeholder="User" id="Footerform1">
     </form>
     <form>
-        <input class="form2" type="number" name="pin" placeholder="PIN">
+        <input class="form2" type="password" name="pin" placeholder="PIN" id="Footerform2">
     </form>
-    <img src="icons/arrow-circle-right.png" class="forms__sendler">
+    <img src="icons/arrow-circle-right.png" class="forms__sendler" id="footerSendler">
   </div>
 
 <link rel="stylesheet" type="text/css"  href="Bankist__app(small screens).css">

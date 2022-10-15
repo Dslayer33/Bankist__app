@@ -457,3 +457,55 @@
         display: flex;
     }
 }
+
+@media screen and (min-width:1501px) {
+    .body__header {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 'hname hicon hforms';
+    }
+
+   
+
+    .header__name {
+     grid-area: hname;
+     justify-self: start;
+    }
+
+    .header__icon {
+        grid-area: hicon;
+        justify-self: center;
+    }
+
+    .header__forms {
+     grid-area: hforms;
+     justify-self: end;
+    }
+
+}
+
+@media screen and (min-width:2000px) {
+    html {
+        width: 100%;
+        height: 100%;
+        font-size: 75%;
+    }
+}
+
+@media screen and (min-width:2500px) {
+    html {
+        width: 100%;
+        height: 100%;
+        font-size: 85%;
+    }
+}
+
+
+@media screen and (min-width:3000px) {
+    html {
+        width: 100%;
+        height: 100%;
+        font-size: 95%;
+    }
+}

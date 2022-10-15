@@ -6,7 +6,7 @@
 
 html {
     width: 100%;
-    height: 100%;
+    height: auto;
     font-size: 62.5%;
     user-select: none;
     -webkit-user-select: none;
@@ -18,6 +18,7 @@ body {
    background-image:url('img/credit-card.jpeg');
    background-repeat:no-repeat;
    background-size:100% 100%;
+   height: auto;
 }
 
 .body__header {
@@ -25,6 +26,17 @@ body {
     width: 100%;
     /*top: 10px;*/
     top: 1rem;
+    height: 6rem;
+   
+}
+
+.shadow__header {
+    display: none;
+    position: absolute;
+    width: 100%;
+    /*top: 10px;*/
+    top: 1rem;
+    height: 6rem;
 }
 
 .header__icon {
@@ -54,6 +66,21 @@ body {
 }
 .header__name:hover{
     cursor: pointer;
+}
+
+.header__shadowtext {
+    display: none;
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+    left: 0;
+    margin-left: 1rem;
+    text-shadow:
+    0.2rem  0.2rem 0 #000,
+   -0.1rem -0.1rem 0 #000,  
+    0.1rem -0.1rem 0 #000,
+   -0.1rem  0.1rem 0 #000,
+    0.1rem  0.1rem 0 #000;
 }
 
 .header__shadowname {
@@ -197,6 +224,8 @@ body {
     cursor: pointer;
 }
 
+
+
 .header__forms {
     position: absolute;
     display: flex;
@@ -244,11 +273,17 @@ body {
     height: 4rem;
 }
 .forms__sendler:hover{
-    height: 4.5rem;
+    /*height: 4.5rem;*/
+    transform: scale(1.2);
+    cursor: pointer;
 }
 .forms__sendler:active{
-    height: 3.9rem;
+    /*height: 3.9rem;*/
+    transform: scale(0.9);
 }
+
+
+
 
 .body__main {
     position: absolute;
@@ -703,6 +738,362 @@ body {
 .body__icon4 {
     height: 4rem;
 }
+
+.shadow-container {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8rem;
+    width: 100%;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    height: auto;
+    background-color: white;
+    padding: 0.5rem;
+}
+
+
+
+.shadow-container__balance {
+    width: inherit;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.balance-text {
+    font-size: 3rem;
+    font-weight: 500;
+    justify-self: start;
+    transition: all .2s;
+}
+
+.balance-text:hover {
+    transform: skewX(-5deg);
+    cursor: pointer;
+    border-bottom: 0.2rem solid black;
+}
+
+.balance-value {
+    font-size: 3rem;
+    font-weight: 500;
+    justify-self: end;
+}
+
+.u-boxes-position {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.value-box {
+    margin-top: 2rem;
+    /*left: 0;*/
+    justify-self: start;
+    width: 85%;
+    height: auto;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(8,1fr);
+}
+
+.value-box__block {
+  width: inherit;
+  height: 5rem;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-top: 0.5rem;
+
+}
+
+.user-box {
+    width: 85%;
+    margin-top: 2rem;
+    justify-self: end;
+    height: auto;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(3,1fr);
+}
+
+.user-box__block {
+  width: inherit;
+  height: 15rem;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.block-title {
+    font-size: 2rem;
+    color: black;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.u-block-sendler {
+    width: inherit;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+.u-block-request {
+    width: inherit;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.u-block-close {
+    width: inherit;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.sendler-leftp {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(2,1fr);
+    text-align: center;
+    width: 10rem;
+}
+
+.request-leftp {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(2,1fr);
+    text-align: center;
+    width: 10rem;
+}
+
+.close-leftp {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(2,1fr);
+    text-align: center;
+    width: 10rem;
+}
+
+.sendler-centerp {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(2,1fr);
+    text-align: center;
+    width: 10rem;
+}
+
+.close-centerp {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(2,1fr);
+    text-align: center;
+    width: 10rem;
+}
+
+.sendler-endp {
+    border: 0.1rem solid black;
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+    width: 5rem;
+    font-size: 2rem;
+    text-align: center;
+    transition: all .2s;
+}
+
+.request-endp {
+    border: 0.1rem solid black;
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+    width: 5rem;
+    font-size: 2rem;
+    text-align: center;
+    transition: all .2s;
+}
+
+.close-endp {
+    border: 0.1rem solid black;
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+    width: 5rem;
+    font-size: 2rem;
+    text-align: center;
+    transition: all .2s;
+}
+
+.sendler-leftp__form {
+    border: 0.1rem solid black;
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    width: 10rem;
+}
+
+.sendler-leftp__formtext {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.sendler-centerp__formtext {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.request-leftp__formtext {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.close-leftp__formtext {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.close-centerp__formtext {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.form-line {
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    width: 10rem;
+    background-color:rgba(255, 135, 0, 0.842);
+    text-align: center;
+}
+
+.form-line2 {
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    width: 10rem;
+    background-color:rgba(0, 108, 0, 0.842);
+    text-align: center;
+}
+
+.form-line3 {
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    width: 10rem;
+    background-color: rgba(255, 34, 0, 0.575);
+    text-align: center;
+}
+
+.block-transfer {
+   background-color:rgba(255, 166, 0, 0.842);
+   color: black;
+}
+
+.block-request {
+   background-color: rgba(0, 128, 0, 0.842);
+   color: black;
+}
+
+.block-close {
+   background-color: rgba(255, 0, 0, 0.842);
+   color: black;
+}
+
+.u-log-position {
+    margin-top: 2rem;
+    font-size: 2rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1rem;
+}
+
+.login-time {
+  justify-self: start;
+  display: none;
+}
+
+.value-choose {
+    justify-self: end;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.3rem;
+}
+
+.login-time__data {
+ font-weight: 700;
+ text-decoration: underline;
+}
+
+.login-time__data2 {
+    font-weight: 700;
+    text-decoration: underline;
+   }
+
+.logout-time__data {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+[class*=-endp]:hover {
+    transform:scale(1.2) skewX(-10deg);
+  }
+
+[class*=-endp]:active {
+    transform:scale(0.9);
+  }
+
+  .currency-form {
+      display: none;
+  }
+
+
+
+  .currency-btn {
+      width: 15rem;
+      border-radius:0.5rem 0.5rem 0.5rem 0.5rem;
+      font-size: 2.5rem;
+      font-weight: 500;
+      justify-self: end;
+  }
+
+  .currency-btn:hover {
+      transform: scale(1.1);
+  }
+
+  .currency-btn:active {
+    transform: scale(0.9);
+}
+
+  .currency-cancel {
+      width: 1rem;
+  }
+
+  .currency-cancel:hover {
+    transform: scale(1.2);
+}
+
+  .currency-ch {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      display: grid;
+      grid-auto-flow: column;
+      border-radius:0.5rem 0.5rem 0.5rem 0.5rem;
+
+      animation-name: fromRight1;
+      animation-duration:2s;
+  }
+
+  .currency:hover {
+       transform: scale(1.2);
+       border: 0.2rem solid black;
+       border-radius: 100%;
+  }
 
 @keyframes fromLeft1 {
 0% {
