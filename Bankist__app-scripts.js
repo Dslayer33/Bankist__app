@@ -39,6 +39,9 @@ let loginTimeData2=document.querySelector( '.login-time__data2');
 let currencyBtn=document.querySelector( '.currency-btn');
 let currencyForm=document.querySelector( '.currency-form');
 let currencyCancel=document.querySelector( '.currency-cancel');
+let closeAccUser=document.querySelector( '.close-acc__user');
+let closeAccPIN=document.querySelector( '.close-acc__pin');
+let closeAccBtn=document.querySelector( '.close-endp');
 /*let AccConstruct=function(User,PIN){
 this.User=User;
 this.PIN=PIN;
@@ -208,6 +211,8 @@ shadowBlockPIN.textContent='PIN:1111';
 let accaunt1=new AccConstruct('user1','0000');
 let accaunt2=new AccConstruct('user2','1111');
 
+ 
+
 
 
 formsSendler.addEventListener('click',function(e16){
@@ -239,6 +244,8 @@ formsSendler.addEventListener('click',function(e16){
       return form1SaveData,form2SaveData;
 });
 
+
+
 currencyBtn.addEventListener('click',function(e17){
     e17.preventDefault();
     e17.stopPropagation();
@@ -251,4 +258,29 @@ currencyCancel.addEventListener('click',function(e18){
     e18.stopPropagation();
     currencyForm.style.cssText='display:none';
     currencyBtn.style.cssText='display:inline';
+});
+
+
+closeAccBtn.addEventListener('click',function(e19){
+    e19.preventDefault();
+    e19.stopPropagation();
+    let closeUserData=closeAccUser.value;
+    let closePINData=closeAccPIN.value;
+
+    if(closeUserData == accaunt1.User && closePINData == +accaunt1.PIN){
+        bodyHeader.style.cssText='display:inline';
+        shadowHeader.style.cssText='display:none';
+         headerShadowText.style.cssText='display:none';
+         logIn.style.cssText='display:flex';
+         worldTransfers.style.cssText='display:flex';
+         reBonus.style.cssText='display:flex';
+         questions.style.cssText='display:flex';
+         bodyForms.style.cssText='display:flex';
+        shadowContainer.style.cssText='display:none';
+        loginTime.style.cssText='display:none';
+    } else {
+        alert('Wrong PIN or UserName!');
+    }
+
+    return closeUserData,closePINData,formsSendler;
 });
